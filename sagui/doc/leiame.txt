@@ -1,0 +1,35 @@
+Apos instalar o pacote RPM proceder os seguintes passos:
+
+Verifique se o banco esta no ar 
+
+/etc/init.d/postgresql status
+
+Se não estiver, iniciar o banco
+
+/etc/init.d/postgresql start
+
+1 Criar os usuario do banco e do servidor web no banco, como root execute os seguintes comandos:
+
+# su - postgres
+
+Responda não para todas as perguntas daqui para frente
+
+$ createuser sagui
+
+$ createuser apache
+
+2 Criar o Banco de Dados
+
+$ createdb sagui
+
+
+3 Povoar o banco
+
+psql sagui -c "\i /var/www/sagui/sql/sagui.sql"
+
+Apartir deste momento o servidor esta no ar.
+
+Para acessar o digite em um browse http://127.0.0.1/sagui
+
+Login: sagui
+senha: sagui
